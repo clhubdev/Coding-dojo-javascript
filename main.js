@@ -1,7 +1,7 @@
  module.exports = {
     stringReverser: function(s) {
-        // Your code goes here
+        
     
-        return s //something
+        return s.split('').reverse().join('') //something
     }
  }
