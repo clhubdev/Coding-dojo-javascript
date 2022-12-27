@@ -1,28 +1,51 @@
 module.exports = {
     arraySum: function(arr) {
         // Your code goes here
-        if (arguments.length === 0) return 0
-
-        const charOrNum = element => isNan(element) ? 0 : parseInt(element)
-
-        return arr.reduce((prev, current) => charOrNum(prev) + charOrNum(current))
+        if(arguments.length == 0) return 0;
+        let numOrChar = n => isNaN(n) ? 0 : parseInt(n);        
+        return arr.reduce((a, b) => numOrChar(a) + numOrChar(b));
     },
 
     arrayAverage: function(arr) {
-        // Your code goes here
+        
+        if(arguments.length == 0) return 0;
 
-        return arr; // or something else who knows ?
+        const total = module.exports.arraySum(arr);
+        const filterNumber = arr.filter(number => !isNaN(number));
+        
+
+        if (filterNumber == 0) {
+            return 0;
+        } else {
+            return total / filterNumber.length; 
+        }
+       
     },
 
     arrayMax: function(arr) {
-        // Your code goes here
+        if(arguments.length == 0) return 0;
 
-        return arr // or something else who knows ?
+        const filterNumber = arr.filter(number => !isNaN(number));
+
+        if (filterNumber == 0) {
+            return 0;
+        } else {
+            return Math.max(...filterNumber);
+        }
+        
     },
 
     arrayMin: function(arr) {
-        // Your code goes here
 
-        return arr // or something else who knows ?
+        if(arguments.length == 0) return 0;
+
+        const filterNumber = arr.filter(number => !isNaN(number));
+
+        if (filterNumber == 0) {
+            return 0;
+        } else {
+            return Math.min(...filterNumber);
+        }
+
     }
  };
