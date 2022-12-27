@@ -1,7 +1,10 @@
 module.exports = {
     falsyBouncer: function(arr) {
-        // your code goes here
-
-        return arr // or something else who knows ? 
+        if (arguments.length === 0 ) {
+            return arr = [];
+        } else {
+            return  arr.filter(Boolean);
+        }
+        
     }
 }
